@@ -50,7 +50,7 @@ const translations: Record<string, Record<string, string>> = {
     "footer.youremail": "Your email",
     "footer.subscribe": "Subscribe",
     "footer.allrightsreserved": "All rights reserved.",
-    "footer.madewith": "Made with 💖 for preserving cultural heritage",
+    "footer.madewith": "Made with 💖 by Team COSMIC",
     // New features translations
     "culturalknowledge": "Cultural Knowledge Graph",
     "interactivemapping": "Interactive Cultural Mapping",
