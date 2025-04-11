@@ -24,10 +24,10 @@ export const stories: Story[] = [
     id: "belur-halebidu",
     title: "The Hoysala Marvels: Belur and Halebidu",
     excerpt: "Exploring the intricate stone carvings and architectural splendor of Karnataka's Hoysala temples.",
-    thumbnail: "https://images.unsplash.com/photo-1590766229856-211ada32c540?auto=format&fit=crop&q=80",
+    thumbnail: "https://cisindus.org/wp-content/uploads/2021/10/Hoysaleshwar-Temple_1-1-scaled.jpeg",
     author: {
       name: "Karthik Gowda",
-      avatar: "https://randomuser.me/api/portraits/men/42.jpg"
+      avatar: "https://img.freepik.com/premium-photo/image-25-year-old-indian-man-that-is-smiling-camera_878783-7217.jpg"
     },
     postedAt: "3 days ago",
     likes: 342,
@@ -37,17 +37,17 @@ export const stories: Story[] = [
     media: [
       {
         type: "image",
-        url: "https://images.unsplash.com/photo-1590766229856-211ada32c540?auto=format&fit=crop&q=80",
+        url: "https://www.india-a2z.com/images/halebidu1.jpg",
         caption: "The magnificent star-shaped platform of Hoysaleswara Temple"
       },
       {
         type: "image",
-        url: "https://images.unsplash.com/photo-1627719172038-611c725962d8?auto=format&fit=crop&q=80",
+        url: "https://images.deccanherald.com/deccanherald%2Fimport%2Fsites%2Fdh%2Ffiles%2Farticle_images%2F2016%2F01%2F18%2F523779.jpg",
         caption: "Intricate stone carvings depicting celestial dancers"
       },
       {
         type: "image",
-        url: "https://images.unsplash.com/photo-1626196874981-83d1d99a32a3?auto=format&fit=crop&q=80",
+        url: "https://i0.wp.com/yatrikaone.com/wp-content/uploads/travel/destination/India/Karnataka/Belur/ChennaKeshava/Entrance/East/E_17_1_987_1_east_entrance_1_rs_wm.jpg",
         caption: "The majestic entrance of Chennakeshava Temple"
       }
     ]
@@ -56,10 +56,10 @@ export const stories: Story[] = [
     id: "hampi-vijayanagara",
     title: "Lost City of Hampi: Vijayanagara's Legacy",
     excerpt: "Wandering through the boulder-strewn landscape and magnificent temples of Karnataka's UNESCO World Heritage Site.",
-    thumbnail: "https://images.unsplash.com/photo-1590128584129-06cb32eed4bd?auto=format&fit=crop&q=80",
+    thumbnail: "https://www.worldatlas.com/r/w960-q80/upload/ff/49/57/shutterstock-1509720656.jpg",
     author: {
       name: "Lakshmi Devi",
-      avatar: "https://randomuser.me/api/portraits/women/22.jpg"
+      avatar: "https://img.freepik.com/premium-photo/25yearold-indian-woman-s-elegance-golden-saree_878783-16771.jpg"
     },
     postedAt: "1 week ago",
     likes: 578,
@@ -70,10 +70,10 @@ export const stories: Story[] = [
     id: "coorg-coffee",
     title: "Misty Mornings in Coorg's Coffee Plantations",
     excerpt: "Experiencing the aroma and culture of Karnataka's coffee country nestled in the Western Ghats.",
-    thumbnail: "https://images.unsplash.com/photo-1556633640-60aa9e50dad4?auto=format&fit=crop&q=80",
+    thumbnail: "https://specialplacesofindia.com/wp-content/uploads/2024/01/Homage-to-Coffee-%E2%80%93-Unique-Coffee-Infused-Experiences.jpg",
     author: {
       name: "Arjun Kodava",
-      avatar: "https://randomuser.me/api/portraits/men/75.jpg"
+      avatar: "https://img.freepik.com/premium-photo/image-25-year-old-indian-man-that-is-smiling-camera_878783-7218.jpg"
     },
     postedAt: "2 weeks ago",
     likes: 415,
@@ -84,10 +84,10 @@ export const stories: Story[] = [
     id: "mysore-dasara",
     title: "Celebrating Mysore Dasara: A Royal Affair",
     excerpt: "Witnessing the grandeur of Karnataka's most famous festival with its illuminated palace and majestic processions.",
-    thumbnail: "https://images.unsplash.com/photo-1602313987641-21840659c71d?auto=format&fit=crop&q=80",
+    thumbnail: "https://i0.wp.com/mysuruinfrahub.com/wp-content/uploads/2023/09/MysuruDasara3.jpg",
     author: {
       name: "Deepa Iyengar",
-      avatar: "https://randomuser.me/api/portraits/women/28.jpg"
+      avatar: "https://cdn.openart.ai/published/4pSEhEglIwsiwhfTQmbU/qQG-12Dh_9OfU_raw.jpg"
     },
     postedAt: "1 month ago",
     likes: 629,
@@ -98,10 +98,10 @@ export const stories: Story[] = [
     id: "gokarna-beaches",
     title: "Hidden Beaches of Gokarna",
     excerpt: "Discovering Karnataka's coastal paradise with its pristine beaches, tranquil waters, and spiritual vibes.",
-    thumbnail: "https://images.unsplash.com/photo-1599030284356-04d1ca39833c?auto=format&fit=crop&q=80",
+    thumbnail: "https://static.india.com/wp-content/uploads/2022/07/Paradise-Beach-Gokarna.jpg",
     author: {
       name: "Praveen Kumar",
-      avatar: "https://randomuser.me/api/portraits/men/32.jpg"
+      avatar: "https://img.freepik.com/premium-photo/young-smart-indian-businessman-smiling-face-standing-blur-background-creative-colorful-office-interior-design-generative-ai-aig20_31965-142269.jpg"
     },
     postedAt: "2 months ago",
     likes: 382,
@@ -112,10 +112,10 @@ export const stories: Story[] = [
     id: "udupi-cuisine",
     title: "Culinary Journey Through Udupi's Traditional Kitchens",
     excerpt: "Exploring the authentic vegetarian delicacies and age-old cooking techniques of coastal Karnataka.",
-    thumbnail: "https://images.unsplash.com/photo-1607330289024-1535c6b4e1c1?auto=format&fit=crop&q=80",
+    thumbnail: "https://thewandertherapy.com/wp-content/uploads/2024/06/9.udupi-cuisine.jpg",
     author: {
       name: "Sumana Hegde",
-      avatar: "https://randomuser.me/api/portraits/women/56.jpg"
+      avatar: "https://t4.ftcdn.net/jpg/07/98/72/89/360_F_798728945_c7RghNy7K8nSSVYsisEJ7EladuShxT98.jpg"
     },
     postedAt: "3 months ago",
     likes: 287,
@@ -126,10 +126,10 @@ export const stories: Story[] = [
     id: "badami-caves",
     title: "The Ancient Rock-Cut Caves of Badami",
     excerpt: "Exploring the magnificent sandstone cave temples carved by the early Chalukyan artisans in North Karnataka.",
-    thumbnail: "https://images.unsplash.com/photo-1527786356703-4b100091cd2c?auto=format&fit=crop&q=80",
+    thumbnail: "https://turuhi.com/storage/story/1-Badami-Caves.jpg",
     author: {
       name: "Vinay Patil",
-      avatar: "https://randomuser.me/api/portraits/men/62.jpg"
+      avatar: "https://srmap.edu.in/wp-content/uploads/2021/02/manzoor-hassan-1.jpg"
     },
     postedAt: "4 months ago",
     likes: 342,
@@ -140,10 +140,10 @@ export const stories: Story[] = [
     id: "jog-falls",
     title: "Monsoon Magic at Jog Falls",
     excerpt: "Witnessing the raw power and majesty of Karnataka's highest waterfall during peak monsoon season.",
-    thumbnail: "https://images.unsplash.com/photo-1628933183605-b198050997c4?auto=format&fit=crop&q=80",
+    thumbnail: "https://img.veenaworld.com/wp-content/uploads/2024/02/A-Guide-to-Jog-Falls-Karnataka.jpg",
     author: {
-      name: "Meera Shenoy",
-      avatar: "https://randomuser.me/api/portraits/women/43.jpg"
+      name: "Vani Gowda",
+      avatar: "https://i.pinimg.com/736x/91/3f/00/913f00423f75a57b2794d3d039c54e13.jpg"
     },
     postedAt: "5 months ago",
     likes: 405,

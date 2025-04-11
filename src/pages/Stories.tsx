@@ -4,7 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import PageHeader from "@/components/common/PageHeader";
 import StoryCard from "@/components/stories/StoryCard";
-import { Search, Filter, UploadCloud, X } from "lucide-react";
+import { Search, Filter, UploadCloud } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
