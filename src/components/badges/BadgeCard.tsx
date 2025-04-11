@@ -38,7 +38,7 @@ const BadgeCard = ({
       
       <div className="flex flex-col items-center text-center mb-4">
         <div className={cn(
-          "w-16 h-16 rounded-full flex items-center justify-center mb-3",
+          "w-18 h-18 rounded-full flex items-center justify-center mb-3",
           isEarned 
             ? "bg-vistara-gold/20" 
             : "bg-muted"
@@ -47,8 +47,8 @@ const BadgeCard = ({
             src={icon} 
             alt={name} 
             className={cn(
-              "w-10 h-10",
-              !isEarned && "opacity-50"
+              "w-14 h-12",
+              !isEarned && "opacity-80"
             )} 
           />
         </div>

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Calendar, MapPin, User, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -32,11 +31,13 @@ const TravelBuddyCard = ({
   onConnect,
 }: TravelBuddyCardProps) => {
   const [isConnecting, setIsConnecting] = useState(false);
+  const [isConnected, setIsConnected] = useState(false);
 
   const handleConnect = () => {
     setIsConnecting(true);
     setTimeout(() => {
       onConnect(id);
+      setIsConnected(true);
       setIsConnecting(false);
     }, 1000);
   };
@@ -67,10 +68,12 @@ const TravelBuddyCard = ({
           <MapPin size={16} className="mr-2 text-vistara-maroon" />
           <span>{destination}</span>
         </div>
-        
+
         <div className="flex items-center text-sm">
           <Calendar size={16} className="mr-2 text-vistara-blue" />
-          <span>{fromDate} - {toDate}</span>
+          <span>
+            {fromDate} - {toDate}
+          </span>
         </div>
       </div>
 
@@ -94,14 +97,18 @@ const TravelBuddyCard = ({
 
       <Button
         onClick={handleConnect}
-        disabled={isConnecting}
+        disabled={isConnecting || isConnected}
         className={cn(
           "w-full rounded-full",
-          isConnecting ? "opacity-80" : ""
+          (isConnecting || isConnected) && "opacity-80"
         )}
       >
         <MessageCircle size={16} className="mr-2" />
-        {isConnecting ? "Connecting..." : "Connect Now"}
+        {isConnected
+          ? "Connected!"
+          : isConnecting
+          ? "Connecting..."
+          : "Connect Now"}
       </Button>
     </div>
   );
