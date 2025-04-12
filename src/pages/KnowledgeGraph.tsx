@@ -6,6 +6,7 @@ import { Network, Share, BookOpen, Map, BookMarked } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/providers/LanguageProvider';
+import CulturalGraphVisualization from '@/components/graph/CulturalGraphVisualization';
 
 const KnowledgeGraph = () => {
   const { translate } = useLanguage();
