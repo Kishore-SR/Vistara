@@ -215,7 +215,9 @@ const Connect = () => {
             <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
               Create your own travel plan and let others connect with you! Share your destination, dates, and what you're looking for in a travel companion.
             </p>
-            <Button size="lg">Create Travel Plan</Button>
+            <a href="https://vistara-travel-itinerary-generator.streamlit.app/" rel="noopener noreferrer">
+              <Button size="lg">Create Travel Plan</Button>
+            </a>
           </div>
         </div>
       </main>

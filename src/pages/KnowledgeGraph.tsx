@@ -48,7 +48,10 @@ const KnowledgeGraph = () => {
                     <span>Contribute your knowledge to expand the cultural graph</span>
                   </li>
                 </ul>
-                <Button className="mt-6">Explore the Graph</Button>
+                <a href="https://vistara-cultural-connection-graph.streamlit.app/" rel="noopener noreferrer">
+                  <Button className="mt-6">Explore the Graph</Button>
+                </a>
+
               </div>
               
               <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl bg-card border">
