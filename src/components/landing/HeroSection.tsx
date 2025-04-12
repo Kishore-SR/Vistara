@@ -52,13 +52,13 @@ const HeroSection = () => {
 
           <div className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-xl">
             <img
-              src="https://images.unsplash.com/photo-1620766182966-c6eb5ed2b788?auto=format&fit=crop&q=80"
+              src="/main-hero.gif"
               alt="Indian Heritage"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-6 text-white">
-              <h3 className="text-xl font-medium">Hampi</h3>
+              <h3 className="text-xl font-medium">Our Pride ❤</h3>
               <p className="text-sm opacity-80">Karnataka, India</p>
             </div>
           </div>

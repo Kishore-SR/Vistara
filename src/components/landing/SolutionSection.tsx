@@ -10,7 +10,7 @@ const SolutionSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <img
-              src="https://karnatakatourism.org/wp-content/uploads/2020/05/ManjarabadFort-Pravesh-Prabhu.jpg"
+              src="https://media.assettype.com/outlooktraveller%2F2024-08-08%2Fixt4yn5a%2Fshutterstock_1837839025.jpg"
               alt="Cultural tourism experience"
               className="rounded-xl shadow-lg"
             />
