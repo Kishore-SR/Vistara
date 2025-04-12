@@ -1,4 +1,5 @@
 # COSMIC x Advaya
+![App Preview](public/readme-header.png)
 
 ## Team Details
 - **Team Number:** 85
@@ -15,7 +16,7 @@
 
 > #### **Problem Statement:** Tourists struggle to find authentic cultural experiences and contribute to heritage economies.
 
-[![Project Link](https://img.shields.io/badge/Project%20Link-37a779?style=for-the-badge)](vistara-cosmic.vercel.app)  &nbsp; 
+[![Project Link](https://img.shields.io/badge/Project%20Link-37a779?style=for-the-badge)](https://vistara-cosmic.vercel.app/)  &nbsp; 
 [![Hackathon VIDEO](https://img.shields.io/badge/Demo%20Video-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://drive.google.com/file/d/1LwYCrY9XuiIHgHD9qHpiGl3LZ5shVJss/view?usp=sharing)  
 
 ## About Our Project
