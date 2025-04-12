@@ -59,7 +59,7 @@ const KnowledgeGraph = () => {
                   <div className="text-center">
                     <Network className="h-16 w-16 text-primary mx-auto mb-4" />
                     <p className="text-xl font-medium">Interactive Graph Visualization</p>
-                    <p className="text-sm text-muted-foreground">Coming Soon</p>
+                    {/* <p className="text-sm text-muted-foreground">Coming Soon</p> */}
                   </div>
                 </div>
               </div>
