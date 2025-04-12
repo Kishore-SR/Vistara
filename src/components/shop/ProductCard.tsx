@@ -53,7 +53,7 @@ const ProductCard = ({
   };
 
   return (
-    <Link to={`/shop/${id}`}>
+    
       <div className="feature-card h-full overflow-hidden hover:shadow-lg transition-all duration-300">
         <div className="relative aspect-square overflow-hidden rounded-lg mb-4">
           <img
@@ -119,7 +119,7 @@ const ProductCard = ({
           </div>
         </div>
       </div>
-    </Link>
+    
   );
 };
 
