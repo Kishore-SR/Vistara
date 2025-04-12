@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Heart, ShoppingCart, MapPin } from "lucide-react";
@@ -19,6 +18,7 @@ interface ProductCardProps {
   category: string;
   likes: number;
   isLiked?: boolean;
+  onAddToCart?: () => void; // New prop for add to cart function
 }
 
 const ProductCard = ({
@@ -31,6 +31,7 @@ const ProductCard = ({
   category,
   likes,
   isLiked = false,
+  onAddToCart,
 }: ProductCardProps) => {
   const [liked, setLiked] = useState(isLiked);
   const [likeCount, setLikeCount] = useState(likes);
@@ -45,8 +46,10 @@ const ProductCard = ({
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log("Added to cart:", name);
-    // Add to cart logic would go here
+    
+    if (onAddToCart) {
+      onAddToCart();
+    }
   };
 
   return (

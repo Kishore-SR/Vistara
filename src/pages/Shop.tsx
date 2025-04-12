@@ -1,22 +1,110 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { products } from "@/data/products";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import PageHeader from "@/components/common/PageHeader";
 import ProductCard from "@/components/shop/ProductCard";
-import { Search, Filter, ShoppingBag } from "lucide-react";
+import { Search, Filter, ShoppingBag, X, Check } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import { Slider } from "@/components/ui/slider";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
+import { toast } from "@/components/ui/use-toast";
+
+// Define the CartItem type
+interface CartItem {
+  id: string;
+  name: string;
+  image: string;
+  price: number;
+  quantity: number;
+}
 
 const Shop = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [category, setCategory] = useState("all");
   const [sortBy, setSortBy] = useState("popular");
   const [priceRange, setPriceRange] = useState([0, 15000]);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isPurchaseComplete, setIsPurchaseComplete] = useState(false);
+
+  // Load cart from localStorage on component mount
+  useEffect(() => {
+    const savedCart = localStorage.getItem('vistara-cart');
+    if (savedCart) {
+      setCartItems(JSON.parse(savedCart));
+    }
+  }, []);
+
+  // Save cart to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('vistara-cart', JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  const addToCart = (product: any) => {
+    setCartItems(prevItems => {
+      // Check if product already exists in cart
+      const existingItem = prevItems.find(item => item.id === product.id);
+      
+      if (existingItem) {
+        // Increase quantity if product already in cart
+        return prevItems.map(item => 
+          item.id === product.id 
+            ? { ...item, quantity: item.quantity + 1 } 
+            : item
+        );
+      } else {
+        // Add new product to cart
+        return [...prevItems, {
+          id: product.id,
+          name: product.name,
+          image: product.image,
+          price: product.price,
+          quantity: 1
+        }];
+      }
+    });
+
+    toast({
+      title: "Added to cart",
+      description: `${product.name} has been added to your cart.`,
+      duration: 2000,
+    });
+  };
+
+  const removeFromCart = (id: string) => {
+    setCartItems(prevItems => prevItems.filter(item => item.id !== id));
+  };
+
+  const handleQuantityChange = (id: string, newQuantity: number) => {
+    if (newQuantity < 1) return;
+    
+    setCartItems(prevItems => 
+      prevItems.map(item => 
+        item.id === id ? { ...item, quantity: newQuantity } : item
+      )
+    );
+  };
+
+  const getCartTotal = () => {
+    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+  };
+
+  const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+  const handlePurchase = () => {
+    setIsPurchaseComplete(true);
+    
+    // Clear cart after successful purchase (with a delay)
+    setTimeout(() => {
+      setCartItems([]);
+      setIsPurchaseComplete(false);
+      setIsCartOpen(false);
+    }, 2000);
+  };
 
   const filteredProducts = products.filter((product) => {
     // Filter by search term
@@ -51,9 +139,9 @@ const Shop = () => {
       <Header />
       <main className="flex-grow pt-16">
         <PageHeader
-          title="Shop Local"
-          description="Support local artisans by purchasing authentic handcrafted products. Each purchase preserves cultural traditions and supports the local economy."
-          bgImage="https://images.unsplash.com/photo-1588866343291-bad04c17a4a4?auto=format&fit=crop&q=80"
+          title="Shop Heritage"
+          description="Support skilled artisans by purchasing authentic handcrafted products. Each purchase preserves cultural traditions and supports the regional economy."
+          bgImage="https://www.waytoindia.com/packageimages/Karnataka-Heritage-Tour2.jpg"
         >
           <div className="flex flex-col md:flex-row items-center gap-4 mt-4">
             <div className="relative flex-grow max-w-lg">
@@ -66,9 +154,13 @@ const Shop = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-            <Button variant="secondary" className="w-full md:w-auto">
+            <Button 
+              variant="secondary" 
+              className="w-full md:w-auto"
+              onClick={() => setIsCartOpen(true)}
+            >
               <ShoppingBag size={18} className="mr-2" />
-              View Cart (0)
+              View Cart ({cartItemCount})
             </Button>
           </div>
         </PageHeader>
@@ -193,6 +285,7 @@ const Shop = () => {
                       artisan={product.artisan}
                       category={product.category}
                       likes={product.likes}
+                      onAddToCart={() => addToCart(product)}
                     />
                   ))}
                 </div>
@@ -216,6 +309,96 @@ const Shop = () => {
         </div>
       </main>
       <Footer />
+
+      {/* Shopping Cart Dialog */}
+      <Dialog open={isCartOpen} onOpenChange={setIsCartOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Your Shopping Cart</DialogTitle>
+            <DialogDescription>
+              {cartItems.length === 0 
+                ? "Your cart is empty. Start shopping to add items." 
+                : `You have ${cartItemCount} items in your cart.`}
+            </DialogDescription>
+          </DialogHeader>
+          
+          {isPurchaseComplete ? (
+            <div className="flex flex-col items-center justify-center py-8">
+              <div className="bg-green-100 rounded-full p-3 mb-4">
+                <Check className="h-8 w-8 text-green-600" />
+              </div>
+              <h3 className="text-xl font-medium text-center mb-2">Purchase Successful!</h3>
+              <p className="text-muted-foreground text-center">
+                Thank you for supporting local artisans!
+              </p>
+            </div>
+          ) : (
+            <>
+              {cartItems.length > 0 ? (
+                <div className="space-y-4 max-h-[60vh] overflow-y-auto">
+                  {cartItems.map((item) => (
+                    <div key={item.id} className="flex items-center space-x-3 border-b pb-3">
+                      <div className="w-16 h-16 rounded overflow-hidden flex-shrink-0">
+                        <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-medium truncate">{item.name}</h4>
+                        <div className="flex items-center justify-between mt-1">
+                          <div className="text-sm text-muted-foreground">
+                            ₹{item.price.toLocaleString()} × {item.quantity}
+                          </div>
+                          <div className="font-medium">
+                            ₹{(item.price * item.quantity).toLocaleString()}
+                          </div>
+                        </div>
+                        <div className="flex items-center mt-2">
+                          <Button 
+                            variant="outline" 
+                            size="icon" 
+                            className="h-6 w-6" 
+                            onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
+                          >
+                            -
+                          </Button>
+                          <span className="w-8 text-center">{item.quantity}</span>
+                          <Button 
+                            variant="outline" 
+                            size="icon" 
+                            className="h-6 w-6" 
+                            onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
+                          >
+                            +
+                          </Button>
+                          <Button 
+                            variant="ghost" 
+                            size="icon" 
+                            className="h-6 w-6 ml-2 text-destructive" 
+                            onClick={() => removeFromCart(item.id)}
+                          >
+                            <X size={14} />
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+              
+              {cartItems.length > 0 && (
+                <div className="pt-4 border-t">
+                  <div className="flex justify-between items-center mb-6">
+                    <span className="font-semibold">Total:</span>
+                    <span className="font-semibold text-lg">₹{getCartTotal().toLocaleString()}</span>
+                  </div>
+                  <Button className="w-full" onClick={handlePurchase}>
+                    Purchase Now
+                  </Button>
+                </div>
+              )}
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

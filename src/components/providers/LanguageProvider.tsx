@@ -28,7 +28,7 @@ const translations: Record<string, Record<string, string>> = {
     "home": "Home",
     "explore": "Explore",
     "storyshare": "StoryShare",
-    "shoplocal": "Shop Local",
+    "shoplocal": "MyShop",
     "travelbuddy": "Travel Buddy",
     "badges": "Badges",
     "startexploring": "Start Exploring",
