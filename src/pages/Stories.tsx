@@ -99,7 +99,7 @@ const Stories = () => {
         <PageHeader
           title="Karnataka Stories"
           description="Explore authentic cultural stories and personal experiences from travelers across Karnataka. Discover hidden gems, ancient traditions, and breathtaking landscapes of this culturally rich state."
-          bgImage="https://images.unsplash.com/photo-1602313987641-21840659c71d?auto=format&fit=crop&q=80"
+          bgImage="/story-hero.gif"
         >
           <div className="flex flex-col md:flex-row items-center gap-4 mt-4">
             <div className="relative flex-grow max-w-lg">

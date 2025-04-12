@@ -59,10 +59,14 @@ const Header = () => {
     >
       <div className="container-custom flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <h1 className="font-bold text-2xl tracking-tight text-primary">
-            <span className="font-serif">VISTARA</span>
+          <h1 className="font-bold text-2xl tracking-tight text-primary flex items-center gap-2">
+            <span className="font-serif flex items-center gap-1">
+              <img src="/vistara-logo.svg" alt="logo" className="w-9 h-9" />
+              VISTARA
+            </span>
           </h1>
         </Link>
+
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
@@ -154,7 +158,7 @@ const Header = () => {
           >
             {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
           </Button>
-          
+
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" aria-label="Select language">
@@ -178,7 +182,7 @@ const Header = () => {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          
+
           <Button asChild className="rounded-full">
             <Link to="/explore">{translate("startexploring")}</Link>
           </Button>
@@ -261,7 +265,7 @@ const Header = () => {
             >
               {translate("badges")}
             </Link>
-            
+
             <Link
               to="/knowledge-graph"
               className={cn(
@@ -272,7 +276,7 @@ const Header = () => {
             >
               {translate("culturalknowledge")}
             </Link>
-            
+
             <Link
               to="/cultural-mapping"
               className={cn(
@@ -283,7 +287,7 @@ const Header = () => {
             >
               {translate("interactivemapping")}
             </Link>
-            
+
             <Link
               to="/educational-network"
               className={cn(
@@ -294,7 +298,7 @@ const Header = () => {
             >
               {translate("educationalnetwork")}
             </Link>
-            
+
             <div className="flex items-center space-x-4 py-2">
               <Button
                 variant="ghost"
@@ -304,7 +308,7 @@ const Header = () => {
               >
                 {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
               </Button>
-              
+
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="icon" aria-label="Select language">
@@ -328,7 +332,7 @@ const Header = () => {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
-              
+
               <Button asChild className="rounded-full w-full">
                 <Link to="/explore" onClick={closeMobileMenu}>{translate("startexploring")}</Link>
               </Button>
