@@ -23,7 +23,7 @@ export const products: Product[] = [
     "name": "Kanjeevaram Silk Saree",
     "artisan": {
       "name": "Lakshmi Subramanian",
-      "location": "Chickpete, Bangalore"
+      "location": "Mysuru , Southern Karnataka"
     },
     "price": 12000,
     "description": "Luxurious silk saree from Tamil Nadu, known for its vibrant colors and intricate gold zari work.",
@@ -39,7 +39,7 @@ export const products: Product[] = [
     "name": "Bandhani Dupatta",
     "artisan": {
       "name": "Meena Patel",
-      "location": "Jayanagar, Bangalore"
+      "location": "Hampi, Bangalore"
     },
     "price": 1800,
     "description": "Traditional tie-dye technique from Gujarat, featuring vibrant patterns on cotton fabric.",
@@ -55,7 +55,7 @@ export const products: Product[] = [
     "name": "Chikankari Kurta",
     "artisan": {
       "name": "Farzana Begum",
-      "location": "HSR Layout, Bangalore"
+      "location": "Badami, Bagalkot District"
     },
     "price": 2500,
     "description": "Elegant hand-embroidered kurta from Lucknow, showcasing delicate floral patterns.",
@@ -71,7 +71,7 @@ export const products: Product[] = [
     "name": "Pashmina Shawl",
     "artisan": {
       "name": "Abdul Majid",
-      "location": "Indiranagar, Bangalore"
+      "location": "Pattadakal, Bagalkot District"
     },
     "price": 8500,
     "description": "Soft and warm shawl from Kashmir, made from fine Pashmina wool.",
@@ -87,7 +87,7 @@ export const products: Product[] = [
     "name": "Terracotta Matka",
     "artisan": {
       "name": "Raju Kumhar",
-      "location": "K R Puram, Bangalore"
+      "location": "Belur, Hassan District"
     },
     "price": 450,
     "description": "Handcrafted clay pot perfect for storing water in a traditional way.",
@@ -119,7 +119,7 @@ export const products: Product[] = [
     "name": "Clay Diya Set",
     "artisan": {
       "name": "Sunita Devi",
-      "location": "Banaswadi, Bangalore"
+      "location": "Srirangapatna, Mandya District"
     },
     "price": 250,
     "description": "Decorative handmade diya set for festivals and rituals.",
@@ -135,7 +135,7 @@ export const products: Product[] = [
     "name": "Glazed Pot Planter",
     "artisan": {
       "name": "Manoj Verma",
-      "location": "Peenya, Bangalore"
+      "location": "Sringeri, Chikkamagaluru District"
     },
     "price": 900,
     "description": "Colorful glazed ceramic planter for indoor plants.",
@@ -151,7 +151,7 @@ export const products: Product[] = [
     "name": "Madhubani Painting – Krishna Leela",
     "artisan": {
       "name": "Sita Devi",
-      "location": "Shivajinagar, Bangalore"
+      "location": "Dharmasthala, Dakshina Kannada District"
     },
     "price": 2000,
     "description": "Folk painting from Bihar depicting Krishna's childhood.",
@@ -167,7 +167,7 @@ export const products: Product[] = [
     "name": "Warli Art – Tribal Life",
     "artisan": {
       "name": "Kalu Bhagat",
-      "location": "Silkboard, Bangalore"
+      "location": "Udupi,  Coastal Karnataka"
     },
     "price": 1500,
     "description": "Traditional Warli painting showcasing tribal village scenes.",
@@ -183,7 +183,7 @@ export const products: Product[] = [
     "name": "Brass Oil Lamp (Kuthu Vilakku)",
     "artisan": {
       "name": "Rajan Pillai",
-      "location": "Hessarghatta, Bangalore"
+      "location": "Banavasi, Uttara Kannada District"
     },
     "price": 1800,
     "description": "Traditional South Indian oil lamp, often used in temples.",
@@ -199,7 +199,7 @@ export const products: Product[] = [
     "name": "Dokra Bull Figurine",
     "artisan": {
       "name": "Laxman Murmu",
-      "location": "Rajajinagar, Bangalore"
+      "location": "Talakadu, Near Mysuru, on the banks of the Cauvery River"
     },
     "price": 3500,
     "description": "Handcrafted using ancient lost-wax casting by tribal artisans.",
@@ -215,7 +215,7 @@ export const products: Product[] = [
     "name": "Bell Metal Utensil Set",
     "artisan": {
       "name": "Dinesh Kumar",
-      "location": "HSR-Layout, Bangalore"
+      "location": "Kollur, Udupi District"
     },
     "price": 2400,
     "description": "Durable and traditional dining set made of bell metal.",
@@ -279,7 +279,7 @@ export const products: Product[] = [
     "name": "Stone Buddha Head",
     "artisan": {
       "name": "Nandakumar",
-      "location": "Majestic, Bangalore"
+      "location": "Saundatti, Belagavi District"
     },
     "price": 4200,
     "description": "Carved from black granite, serene expression for meditation spaces.",
@@ -295,7 +295,7 @@ export const products: Product[] = [
     "name": "Terracotta Horse – Bankura Style",
     "artisan": {
       "name": "Pradip Ghosh",
-      "location": "Bengaluru-east, Karnataka"
+      "location": "Shivagange, Tumakuru"
     },
     "price": 1400,
     "description": "Symbolic ritual sculpture from Bengal, often used in religious offerings.",
@@ -311,7 +311,7 @@ export const products: Product[] = [
     "name": "Marble Ganesha Idol",
     "artisan": {
       "name": "Naresh Sharma",
-      "location": "Koramangala, Karnataka"
+      "location": "Lepakshi , Chitradurga"
     },
     "price": 3000,
     "description": "Polished white marble idol with gold embellishments.",
