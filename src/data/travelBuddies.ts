@@ -19,7 +19,7 @@ export const travelBuddies: TravelBuddy[] = [
     id: "tb-001",
     user: {
       name: "Ankit Sharma",
-      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      avatar: "https://newresultbd.com/wp-content/uploads/2022/12/Ankit-Gupta.jpg",
       age: 28,
       gender: "Male"
     },
@@ -33,7 +33,7 @@ export const travelBuddies: TravelBuddy[] = [
     id: "tb-002",
     user: {
       name: "Priya Mehta",
-      avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+      avatar: "https://images.squarespace-cdn.com/content/v1/5eb9913ab179d02117a5f7db/1605207417998-6XG3MN30O6GXFOM1EM8S/Priya+Mehta+-+Headshot.jpg",
       age: 25,
       gender: "Female"
     },
@@ -47,7 +47,7 @@ export const travelBuddies: TravelBuddy[] = [
     id: "tb-003",
     user: {
       name: "Rajiv Singh",
-      avatar: "https://randomuser.me/api/portraits/men/67.jpg",
+      avatar: "https://avisindia.in/images/rajiv.jpg",
       age: 34,
       gender: "Male"
     },
@@ -61,7 +61,7 @@ export const travelBuddies: TravelBuddy[] = [
     id: "tb-004",
     user: {
       name: "Meera Patel",
-      avatar: "https://randomuser.me/api/portraits/women/74.jpg",
+      avatar: "https://i1.rgstatic.net/ii/profile.image/11431281186782148-1694011305922_Q512/Meera-Patel-14.jpg",
       age: 31,
       gender: "Female"
     },
@@ -75,7 +75,7 @@ export const travelBuddies: TravelBuddy[] = [
     id: "tb-005",
     user: {
       name: "Arun Kumar",
-      avatar: "https://randomuser.me/api/portraits/men/42.jpg",
+      avatar: "https://img.nowrunning.com/content/Artist/NArunKumar/banner.jpg",
       age: 27,
       gender: "Male"
     },
@@ -89,7 +89,7 @@ export const travelBuddies: TravelBuddy[] = [
     id: "tb-006",
     user: {
       name: "Neha Reddy",
-      avatar: "https://randomuser.me/api/portraits/women/58.jpg",
+      avatar: "https://th.bing.com/th/id/OIP.fR6NlUngppuKUryHr75jZwAAAA?rs=1&pid=ImgDetMain",
       age: 29,
       gender: "Female"
     },

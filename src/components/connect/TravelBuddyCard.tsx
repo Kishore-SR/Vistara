@@ -94,22 +94,23 @@ const TravelBuddyCard = ({
           "{message}"
         </p>
       </div>
-
       <Button
-        onClick={handleConnect}
-        disabled={isConnecting || isConnected}
-        className={cn(
-          "w-full rounded-full",
-          (isConnecting || isConnected) && "opacity-80"
-        )}
-      >
-        <MessageCircle size={16} className="mr-2" />
-        {isConnected
-          ? "Connected!"
-          : isConnecting
-          ? "Connecting..."
-          : "Connect Now"}
-      </Button>
+  onClick={handleConnect}
+  disabled={isConnecting || isConnected}
+  className={cn(
+    "w-full rounded-full text-white",
+    isConnected ? "bg-green-500" : "bg-blue-500 hover:bg-blue-600",
+    (isConnecting || isConnected) && "opacity-80"
+  )}
+>
+  <MessageCircle size={16} className="mr-2" />
+  {isConnected
+    ? "Connected!"
+    : isConnecting
+    ? "Connecting..."
+    : "Connect Now"}
+</Button>
+
     </div>
   );
 };
