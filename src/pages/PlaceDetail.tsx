@@ -12,6 +12,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Heart, MapPin, Star, Calendar, ArrowLeft, Camera, ChefHat, Hammer, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import ReviewSection from "./ReviewSection";
 
 const PlaceDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -199,79 +200,7 @@ const PlaceDetail = () => {
               </div>
 
               {/* User Reviews */}
-              <div className="bg-card rounded-xl shadow-sm border p-6 md:p-8">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center">
-                    <MessageCircle size={20} className="mr-2 text-primary" />
-                    <h2 className="text-2xl font-semibold">Visitor Reviews</h2>
-                  </div>
-                  <Button size="sm">Write a Review</Button>
-                </div>
-                
-                <div className="space-y-6">
-                  <div className="border-b pb-6">
-                    <div className="flex items-center mb-2">
-                      <img
-                        src="https://randomuser.me/api/portraits/women/65.jpg"
-                        alt="Priya Sharma"
-                        className="w-10 h-10 rounded-full mr-3"
-                      />
-                      <div>
-                        <h4 className="font-medium">Priya Sharma</h4>
-                        <div className="flex items-center text-sm text-muted-foreground">
-                          <span>Visited April 2023</span>
-                          <span className="mx-2">•</span>
-                          <div className="flex">
-                            {[1, 2, 3, 4, 5].map((star) => (
-                              <Star
-                                key={star}
-                                size={14}
-                                className={star <= 5 ? "fill-vistara-gold text-vistara-gold" : "text-muted"}
-                              />
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <p className="text-muted-foreground mt-2">
-                      An incredible place to experience India's ancient history. The architectural marvels are stunning, especially the Vittala Temple and its musical pillars. I recommend hiring a local guide to truly understand the historical significance.
-                    </p>
-                  </div>
-                  
-                  <div className="border-b pb-6">
-                    <div className="flex items-center mb-2">
-                      <img
-                        src="https://randomuser.me/api/portraits/men/32.jpg"
-                        alt="Rahul Menon"
-                        className="w-10 h-10 rounded-full mr-3"
-                      />
-                      <div>
-                        <h4 className="font-medium">Rahul Menon</h4>
-                        <div className="flex items-center text-sm text-muted-foreground">
-                          <span>Visited March 2023</span>
-                          <span className="mx-2">•</span>
-                          <div className="flex">
-                            {[1, 2, 3, 4].map((star) => (
-                              <Star
-                                key={star}
-                                size={14}
-                                className={star <= 4 ? "fill-vistara-gold text-vistara-gold" : "text-muted"}
-                              />
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <p className="text-muted-foreground mt-2">
-                      The landscape is otherworldly with huge boulders and ancient ruins. Best visited during early morning or late afternoon when the light is perfect for photography. December-February is ideal weather-wise. Don't miss the sunset from Matanga Hill!
-                    </p>
-                  </div>
-                  
-                  <Button variant="outline" className="w-full">
-                    View All Reviews
-                  </Button>
-                </div>
-              </div>
+              <ReviewSection/>
             </div>
 
             {/* Sidebar */}
