@@ -64,7 +64,24 @@ export const stories: Story[] = [
     postedAt: "1 week ago",
     likes: 578,
     comments: 45,
-    categories: ["Historical", "Adventure"]
+    categories: ["Historical", "Adventure"],
+    media: [
+      {
+        type: "image",
+        url: "https://www.indiantempletour.com/wp-content/uploads/2023/05/vijaya-vittala-temple-hampi-tourism-entry-fee-timings-holidays-reviews-header.jpg",
+        caption: "The iconic stone chariot at Vittala Temple"
+      },
+      {
+        type: "image",
+        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4U-X98wTZKNhBo97qkC9isat4Dokj6dmP2w&s",
+        caption: "Ruins of the Virupaksha Bazaar against boulder-strewn hills"
+      },
+      {
+        type: "image",
+        url: "https://img.freepik.com/premium-photo/breathtaking-view-majestic-far-eastern-palace-sunset-with-golden-hues-casting-warm-glow_890802-550.jpg?w=360",
+        caption: "Sunset casting golden hues over the royal enclosures"
+      }
+    ]    
   },
   {
     id: "coorg-coffee",
@@ -78,7 +95,24 @@ export const stories: Story[] = [
     postedAt: "2 weeks ago",
     likes: 415,
     comments: 32,
-    categories: ["Natural", "Cultural"]
+    categories: ["Natural", "Cultural"],
+    media: [
+      {
+        type: "image",
+        url: "https://cdn.shopify.com/s/files/1/0551/0981/2291/files/Chikmagalur_Karnataka_1024x1024.jpg?v=1713179622",
+        caption: "Verdant coffee estates rolling across Coorg’s misty hills"
+      },
+      {
+        type: "image",
+        url: "https://images.stockcake.com/public/3/c/c/3cc0a329-0edb-4b7e-8112-9808349f00f7_large/harvesting-coffee-cherries-stockcake.jpg",
+        caption: "Freshly plucked coffee cherries being sun-dried"
+      },
+      {
+        type: "image",
+        url: "https://media2.thrillophilia.com/images/photos/000/231/182/original/1587117758_192067969.jpg?",
+        caption: "A cozy plantation homestay tucked amidst coffee shrubs"
+      }
+    ]    
   },
   {
     id: "mysore-dasara",
@@ -92,7 +126,25 @@ export const stories: Story[] = [
     postedAt: "1 month ago",
     likes: 629,
     comments: 53,
-    categories: ["Festival", "Cultural"]
+    categories: ["Festival", "Cultural"],
+    media: [
+      {
+        type: "image",
+        url: "https://www.drikpanchang.com/images/events/vijaydashami/dasara/mysore_dasara_procession.jpg",
+        caption: "The grand Dasara procession with decorated elephants"
+      },
+      {
+        type: "image",
+        url: "https://www.shutterstock.com/image-photo/mysore-palace-260nw-724917277.jpg",
+        caption: "Mysore Palace illuminated with 100,000 lights during Dasara"
+      },
+      {
+        type: "image",
+        url: "https://www.shutterstock.com/image-photo/mysore-india-30-september-2017-260nw-733380193.jpg",
+        caption: "Traditional folk performances energize the festive streets"
+      }
+    ]
+    
   },
   {
     id: "gokarna-beaches",
@@ -106,7 +158,24 @@ export const stories: Story[] = [
     postedAt: "2 months ago",
     likes: 382,
     comments: 29,
-    categories: ["Adventure", "Spiritual"]
+    categories: ["Adventure", "Spiritual"],
+    media: [
+      {
+        type: "image",
+        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEZb5zfrOIiku0LPwxFQm7VsXE1hSbcYOPrg&s",
+        caption: "The crescent-shaped Om Beach known for its peaceful vibe"
+      },
+      {
+        type: "image",
+        url: "https://cdn.shopify.com/s/files/1/0864/5253/5613/files/AdobeStock_179229828_480x480.jpg?v=1722461320",
+        caption: "Secluded Paradise Beach accessible only by hike or boat"
+      },
+      {
+        type: "image",
+        url: "https://www.holidify.com/images/cmsuploads/compressed/yoga-1996209_960_720_20191223103901.jpg",
+        caption: "Kudle Beach – a favorite for yoga, sunsets, and soul searching"
+      }
+    ]    
   },
   {
     id: "udupi-cuisine",
@@ -120,7 +189,24 @@ export const stories: Story[] = [
     postedAt: "3 months ago",
     likes: 287,
     comments: 24,
-    categories: ["Cuisine", "Cultural"]
+    categories: ["Cuisine", "Cultural"],
+    media: [
+      {
+        type: "image",
+        url: "https://img.freepik.com/premium-photo/traditional-south-indian-meal-food-served-big-banana-leaf-food-platter-complete-thali-selective-focus_466689-50751.jpg?w=2000",
+        caption: "Traditional Udupi meal served on a banana leaf"
+      },
+      {
+        type: "image",
+        url: "https://www.vegrecipesofindia.com/wp-content/uploads/2013/05/udupi-sambar-recipe-1.jpg",
+        caption: "Chefs preparing Udupi sambar and rasam in traditional pots"
+      },
+      {
+        type: "image",
+        url: "https://th.bing.com/th/id/OIP.rIz66a_gZftfpc3uiJfS4QHaFj?rs=1&pid=ImgDetMain",
+        caption: "Temple-style Udupi thali that reflects devotion and simplicity"
+      }
+    ]
   },
   {
     id: "badami-caves",
@@ -134,7 +220,24 @@ export const stories: Story[] = [
     postedAt: "4 months ago",
     likes: 342,
     comments: 31,
-    categories: ["Historical", "Architecture"]
+    categories: ["Historical", "Architecture"],
+    media: [
+      {
+        type: "image",
+        url: "https://www.setmytrip.in/wp-content/uploads/2024/08/licensed-image-21.jpeg",
+        caption: "The red sandstone cliffs housing Badami’s ancient caves"
+      },
+      {
+        type: "image",
+        url: "https://images.stockcake.com/public/1/9/c/19c04d9a-5d9a-4bf7-9fd4-eaedd9a461d5_large/ancient-temple-carvings-stockcake.jpg",
+        caption: "Exquisite carvings of deities etched into the cave walls"
+      },
+      {
+        type: "image",
+        url: "https://yatrikaone.com/wp-content/uploads/travel/destination/India/Karnataka/Badami/AgastyaLake/india_badami_agastya_lake_3_3_19_838_2_rs_wm_north_side_caves_and_fort.jpg",
+        caption: "A panoramic view of Agastya Lake flanked by cave shrines"
+      }
+    ]    
   },
   {
     id: "jog-falls",
@@ -148,6 +251,24 @@ export const stories: Story[] = [
     postedAt: "5 months ago",
     likes: 405,
     comments: 38,
-    categories: ["Natural", "Adventure"]
+    categories: ["Natural", "Adventure"],
+    media: [
+      {
+        type: "image",
+        url: "https://www.karnataka.com/wp-content/uploads/2009/07/jog-falls-01-1280x720.jpg",
+        caption: "The four segmented cascades of Jog Falls in full force"
+      },
+      {
+        type: "image",
+        url: "https://img.veenaworld.com/wp-content/uploads/2024/02/A-Guide-to-Jog-Falls-Karnataka.jpg?imwidth=1300",
+        caption: "Viewpoint offering a breathtaking panorama of the falls"
+      },
+      {
+        type: "image",
+        url: "https://thumbs.dreamstime.com/b/magnificent-view-sharavathi-river-nice-blue-sky-bacground-honnavar-karnataka-india-242182899.jpg",
+        caption: "Misty clouds embracing the roaring waters of Sharavathi"
+      }
+    ]
+    
   }
 ];
