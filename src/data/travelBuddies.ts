@@ -24,8 +24,8 @@ export const travelBuddies: TravelBuddy[] = [
       gender: "Male"
     },
     destination: "Hampi, Karnataka",
-    fromDate: "Dec 15, 2023",
-    toDate: "Dec 22, 2023",
+    fromDate: "Apr 15, 2025",
+    toDate: "Apr 22, 2025",
     interests: ["Photography", "History", "Architecture", "Hiking"],
     message: "Looking for 2-3 travel companions to explore the ancient ruins of Hampi. Planning to rent bicycles to explore the vast area and capture some amazing sunset shots!"
   },
@@ -38,8 +38,8 @@ export const travelBuddies: TravelBuddy[] = [
       gender: "Female"
     },
     destination: "Kerala Backwaters",
-    fromDate: "Jan 5, 2024",
-    toDate: "Jan 12, 2024",
+    fromDate: "Jan 5, 2025",
+    toDate: "Jan 12, 2025",
     interests: ["Culture", "Food", "Nature", "Yoga"],
     message: "Planning a relaxing houseboat trip through the Kerala backwaters, followed by some Ayurvedic spa experiences. Would love to share the costs and experiences with like-minded travelers!"
   },
@@ -52,8 +52,8 @@ export const travelBuddies: TravelBuddy[] = [
       gender: "Male"
     },
     destination: "Varanasi, Uttar Pradesh",
-    fromDate: "Nov 20, 2023",
-    toDate: "Nov 27, 2023",
+    fromDate: "Nov 20, 2025",
+    toDate: "Nov 27, 2025",
     interests: ["Spirituality", "Photography", "History", "Food"],
     message: "Seeking travel companions for a spiritual and cultural journey to Varanasi. Will be exploring the ghats, attending the Ganga Aarti, and visiting nearby Buddhist sites like Sarnath."
   },
@@ -66,8 +66,8 @@ export const travelBuddies: TravelBuddy[] = [
       gender: "Female"
     },
     destination: "Rajasthan Circuit",
-    fromDate: "Dec 10, 2023",
-    toDate: "Dec 24, 2023",
+    fromDate: "Apr 10, 2025",
+    toDate: "Apr 24, 2025",
     interests: ["Architecture", "History", "Shopping", "Desert Safari"],
     message: "Planning a 2-week trip covering Jaipur, Jodhpur, Udaipur, and Jaisalmer. Looking for 2-4 people to join and share transportation costs. Will be staying in heritage hotels and exploring palaces, forts, and local markets."
   },
@@ -80,8 +80,8 @@ export const travelBuddies: TravelBuddy[] = [
       gender: "Male"
     },
     destination: "Spiti Valley, Himachal Pradesh",
-    fromDate: "Jun 5, 2024",
-    toDate: "Jun 15, 2024",
+    fromDate: "Jun 5, 2025",
+    toDate: "Jun 15, 2025",
     interests: ["Trekking", "Photography", "Buddhism", "Adventure"],
     message: "Organizing a road trip to Spiti Valley next summer. Need 3-4 adventure enthusiasts to share the journey. Will be visiting Key Monastery, Chandratal Lake, and doing some short treks. Previous high-altitude experience preferred."
   },
@@ -94,8 +94,8 @@ export const travelBuddies: TravelBuddy[] = [
       gender: "Female"
     },
     destination: "Mysore & Coorg, Karnataka",
-    fromDate: "Feb 2, 2024",
-    toDate: "Feb 9, 2024",
+    fromDate: "Feb 2, 2025",
+    toDate: "Feb 9, 2025",
     interests: ["Culture", "Coffee Plantations", "Wildlife", "Food"],
     message: "Planning a week-long trip to explore Mysore Palace, Coorg coffee estates, and some wildlife sanctuaries. Looking for 2-3 travel companions to share the experience and costs. I speak English, Hindi, and Kannada which will be helpful throughout the trip."
   }
