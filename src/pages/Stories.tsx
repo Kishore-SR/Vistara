@@ -102,11 +102,11 @@ const Stories = () => {
           bgImage="/story-hero.gif"
         >
           <div className="flex flex-col md:flex-row items-center gap-4 mt-4">
-            <div className="relative flex-grow max-w-lg">
+            <div className="relative flex-grow w-full max-w-lg">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={18} />
               <Input
                 type="text"
-                placeholder="Search Karnataka stories, experiences, or places..."
+                placeholder="Search stories..."
                 className="pl-10 bg-white/80 backdrop-blur-sm border-white/20"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -119,26 +119,30 @@ const Stories = () => {
           </div>
         </PageHeader>
 
-        <div className="container mx-auto px-20 py-12">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
-            <Tabs defaultValue="all" className="w-full md:w-auto" onValueChange={setCategory}>
-              <TabsList>
-                <TabsTrigger value="all">All</TabsTrigger>
-                <TabsTrigger value="Historical">Historical</TabsTrigger>
-                <TabsTrigger value="Adventure">Adventure</TabsTrigger>
-                <TabsTrigger value="Cultural">Cultural</TabsTrigger>
-                <TabsTrigger value="Festival">Festivals</TabsTrigger>
-                <TabsTrigger value="Spiritual">Spiritual</TabsTrigger>
-                <TabsTrigger value="Cuisine">Cuisine</TabsTrigger>
-              </TabsList>
-            </Tabs>
+        <div className="container mx-auto px-4 md:px-8 lg:px-20 py-8 md:py-12">
+          <div className="flex flex-col gap-4 mb-8">
+            {/* Scrollable tabs for mobile */}
+            <div className="overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0">
+              <Tabs defaultValue="all" className="w-full" onValueChange={setCategory}>
+                <TabsList className="inline-flex w-max md:w-auto">
+                  <TabsTrigger value="all">All</TabsTrigger>
+                  <TabsTrigger value="Historical">Historical</TabsTrigger>
+                  <TabsTrigger value="Adventure">Adventure</TabsTrigger>
+                  <TabsTrigger value="Cultural">Cultural</TabsTrigger>
+                  <TabsTrigger value="Festival">Festivals</TabsTrigger>
+                  <TabsTrigger value="Spiritual">Spiritual</TabsTrigger>
+                  <TabsTrigger value="Cuisine">Cuisine</TabsTrigger>
+                </TabsList>
+              </Tabs>
+            </div>
 
-            <div className="flex items-center gap-2 w-full md:w-auto">
+            <div className="flex items-center w-full">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="outline" className="flex items-center gap-2">
+                  <Button variant="outline" className="flex items-center gap-2 ml-auto">
                     <Filter size={16} />
-                    <span>Sort: {sortBy === "popular" ? "Most Popular" : sortBy === "comments" ? "Most Commented" : "Newest"}</span>
+                    <span className="hidden sm:inline">Sort:</span> 
+                    <span>{sortBy === "popular" ? "Most Popular" : sortBy === "comments" ? "Most Commented" : "Newest"}</span>
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
@@ -157,7 +161,7 @@ const Stories = () => {
           </div>
 
           {sortedStories.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {sortedStories.map((story) => (
                 <StoryCard
                   key={story.id}
@@ -185,12 +189,12 @@ const Stories = () => {
       </main>
       <Footer />
 
-      {/* Story Submission Form Dialog */}
+      {/* Story Submission Form Dialog - Made responsive */}
       <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
-        <DialogContent className="sm:max-w-[550px] max-h-[90vh] overflow-y-auto">
+        <DialogContent className="sm:max-w-[550px] max-h-[90vh] overflow-y-auto p-4 sm:p-6 w-[95vw]">
           <DialogHeader>
-            <DialogTitle className="text-2xl">Share Your Karnataka Story</DialogTitle>
-            <DialogDescription>
+            <DialogTitle className="text-xl sm:text-2xl">Share Your Karnataka Story</DialogTitle>
+            <DialogDescription className="text-sm sm:text-base">
               Share your experience of Karnataka's hidden cultural gems, traditions, or festivals. Your story will be reviewed before being published.
             </DialogDescription>
           </DialogHeader>
@@ -206,16 +210,16 @@ const Stories = () => {
                       </svg>
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-1">Submitted Successfully!</h3>
-                  <p>Thank you for sharing your Karnataka story. Our team will review it shortly.</p>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-1">Submitted Successfully!</h3>
+                  <p className="text-sm sm:text-base">Thank you for sharing your Karnataka story. Our team will review it shortly.</p>
                 </div>
               </AlertDescription>
             </Alert>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 mt-2">
+              <div className="space-y-3 sm:space-y-4">
                 <div>
-                  <Label htmlFor="title" className="text-right">
+                  <Label htmlFor="title" className="text-sm sm:text-base">
                     Story Title *
                   </Label>
                   <Input 
@@ -225,11 +229,12 @@ const Stories = () => {
                     onChange={handleInputChange} 
                     placeholder="e.g., My Adventure at Jog Falls" 
                     required 
+                    className="mt-1"
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="excerpt" className="text-right">
+                  <Label htmlFor="excerpt" className="text-sm sm:text-base">
                     Brief Summary *
                   </Label>
                   <Textarea 
@@ -238,14 +243,14 @@ const Stories = () => {
                     value={formData.excerpt}
                     onChange={handleInputChange}
                     placeholder="A short description of your story (max 150 characters)"
-                    className="resize-none"
+                    className="resize-none mt-1"
                     maxLength={150}
                     required
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="content" className="text-right">
+                  <Label htmlFor="content" className="text-sm sm:text-base">
                     Your Story *
                   </Label>
                   <Textarea 
@@ -254,13 +259,13 @@ const Stories = () => {
                     value={formData.content}
                     onChange={handleInputChange}
                     placeholder="Share your experience in detail..."
-                    className="min-h-[150px]"
+                    className="min-h-[120px] sm:min-h-[150px] mt-1"
                     required
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="authorName" className="text-right">
+                  <Label htmlFor="authorName" className="text-sm sm:text-base">
                     Your Name *
                   </Label>
                   <Input 
@@ -270,11 +275,12 @@ const Stories = () => {
                     onChange={handleInputChange}
                     placeholder="e.g., Karthik Gowda" 
                     required 
+                    className="mt-1"
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="category" className="text-right">
+                  <Label htmlFor="category" className="text-sm sm:text-base">
                     Category *
                   </Label>
                   <Select 
@@ -282,7 +288,7 @@ const Stories = () => {
                     onValueChange={handleSelectChange}
                     required
                   >
-                    <SelectTrigger className="w-full">
+                    <SelectTrigger className="w-full mt-1">
                       <SelectValue placeholder="Select a category" />
                     </SelectTrigger>
                     <SelectContent>
@@ -299,7 +305,7 @@ const Stories = () => {
                 </div>
                 
                 <div>
-                  <Label htmlFor="imageUrl" className="text-right">
+                  <Label htmlFor="imageUrl" className="text-sm sm:text-base">
                     Image URL
                   </Label>
                   <Input 
@@ -308,6 +314,7 @@ const Stories = () => {
                     value={formData.imageUrl}
                     onChange={handleInputChange}
                     placeholder="https://example.com/your-image.jpg" 
+                    className="mt-1"
                   />
                   <p className="text-xs text-muted-foreground mt-1">
                     Please provide a public URL to an image that represents your story
@@ -315,11 +322,21 @@ const Stories = () => {
                 </div>
               </div>
               
-              <DialogFooter>
-                <Button type="button" variant="outline" onClick={() => setIsFormOpen(false)}>
+              <DialogFooter className="sm:flex-row flex-col gap-3 pt-2">
+                <Button 
+                  type="button" 
+                  variant="outline" 
+                  onClick={() => setIsFormOpen(false)}
+                  className="w-full sm:w-auto order-2 sm:order-1"
+                >
                   Cancel
                 </Button>
-                <Button type="submit">Submit For Review</Button>
+                <Button 
+                  type="submit"
+                  className="w-full sm:w-auto order-1 sm:order-2"
+                >
+                  Submit For Review
+                </Button>
               </DialogFooter>
             </form>
           )}

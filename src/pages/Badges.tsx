@@ -12,7 +12,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Badges = () => {
   const [categoryFilter, setCategoryFilter] = useState("all");
-  
+
   const filteredBadges = badges.filter((badge) => {
     if (categoryFilter === "all") return true;
     if (categoryFilter === "earned") return badge.isEarned;
@@ -22,7 +22,7 @@ const Badges = () => {
 
   const earnedBadges = badges.filter(badge => badge.isEarned);
   const inProgressBadges = badges.filter(badge => !badge.isEarned && badge.progress! > 0);
-  
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -50,7 +50,7 @@ const Badges = () => {
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardHeader className="pb-2">
                 <CardTitle className="text-2xl flex items-center">
@@ -68,7 +68,7 @@ const Badges = () => {
                 </div>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardHeader className="pb-2">
                 <CardTitle className="text-2xl flex items-center">
@@ -92,19 +92,21 @@ const Badges = () => {
               </CardContent>
             </Card>
           </div>
-          
+
           <div className="mb-8">
             <Tabs defaultValue="all" onValueChange={setCategoryFilter}>
-              <TabsList className="mb-6">
-                <TabsTrigger value="all">All Badges</TabsTrigger>
-                <TabsTrigger value="earned">Earned</TabsTrigger>
-                <TabsTrigger value="progress">In Progress</TabsTrigger>
-                <TabsTrigger value="Sustainability">Sustainability</TabsTrigger>
-                <TabsTrigger value="Engagement">Engagement</TabsTrigger>
-                <TabsTrigger value="Community Support">Community</TabsTrigger>
-                <TabsTrigger value="Conservation">Conservation</TabsTrigger>
-              </TabsList>
-              
+              <div className="overflow-x-auto scrollbar-hide -mx-4 px-4 mb-6">
+                <TabsList className="flex w-max gap-2 rounded-xl border bg-muted p-1">
+                  <TabsTrigger className="min-w-max" value="all">All Badges</TabsTrigger>
+                  <TabsTrigger className="min-w-max" value="earned">Earned</TabsTrigger>
+                  <TabsTrigger className="min-w-max" value="progress">In Progress</TabsTrigger>
+                  <TabsTrigger className="min-w-max" value="Sustainability">Sustainability</TabsTrigger>
+                  <TabsTrigger className="min-w-max" value="Engagement">Engagement</TabsTrigger>
+                  <TabsTrigger className="min-w-max" value="Community Support">Community</TabsTrigger>
+                  <TabsTrigger className="min-w-max" value="Conservation">Conservation</TabsTrigger>
+                </TabsList>
+              </div>
+
               <TabsContent value={categoryFilter} className="mt-0">
                 {filteredBadges.length > 0 ? (
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -132,8 +134,9 @@ const Badges = () => {
                 )}
               </TabsContent>
             </Tabs>
+
           </div>
-          
+
           <div className="mt-12 bg-gradient-to-br from-vistara-maroon to-vistara-terracotta text-white rounded-xl shadow-lg p-8">
             <div className="flex flex-col md:flex-row items-center">
               <div className="mb-6 md:mb-0 md:mr-8">

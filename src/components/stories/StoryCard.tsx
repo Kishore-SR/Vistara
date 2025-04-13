@@ -63,20 +63,25 @@ const StoryCard = ({
             alt={title}
             className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
           />
-          <div className="absolute top-3 left-3 flex flex-wrap gap-2">
-            {categories.map((category) => (
+          <div className="absolute top-2 left-2 sm:top-3 sm:left-3 flex flex-wrap gap-1 sm:gap-2">
+            {categories.slice(0, 2).map((category) => (
               <Badge
                 key={category}
-                className="bg-primary/80 hover:bg-primary"
+                className="bg-primary/80 hover:bg-primary text-xs sm:text-sm py-0.5"
               >
                 {category}
               </Badge>
             ))}
+            {categories.length > 2 && (
+              <Badge className="bg-primary/80 hover:bg-primary text-xs sm:text-sm py-0.5">
+                +{categories.length - 2}
+              </Badge>
+            )}
           </div>
           <button
             onClick={handleLikeClick}
             className={cn(
-              "absolute top-3 right-3 p-2 rounded-full transition-colors",
+              "absolute top-2 right-2 sm:top-3 sm:right-3 p-1.5 sm:p-2 rounded-full transition-colors",
               liked
                 ? "bg-primary/90 text-white"
                 : "bg-white/90 text-muted-foreground hover:text-primary"
@@ -90,38 +95,38 @@ const StoryCard = ({
           </button>
         </div>
 
-        <div className="space-y-3">
-          <h3 className="text-lg font-semibold line-clamp-1">{title}</h3>
+        <div className="space-y-2 sm:space-y-3">
+          <h3 className="text-base sm:text-lg font-semibold line-clamp-1">{title}</h3>
 
-          <p className="text-muted-foreground text-sm line-clamp-2">
+          <p className="text-muted-foreground text-xs sm:text-sm line-clamp-2">
             {excerpt}
           </p>
 
-          <div className="flex items-center gap-3 text-sm text-muted-foreground">
-            <div className="flex items-center">
-              <User size={14} className="mr-1" />
-              <span>{author.name}</span>
+          <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-muted-foreground">
+            <div className="flex items-center truncate">
+              <User size={12} className="mr-1 flex-shrink-0" />
+              <span className="truncate">{author.name}</span>
             </div>
-            <div className="flex items-center">
-              <Clock size={14} className="mr-1" />
+            <div className="flex items-center flex-shrink-0">
+              <Clock size={12} className="mr-1" />
               <span>{postedAt}</span>
             </div>
           </div>
 
-          <div className="flex justify-between items-center pt-2 text-sm text-muted-foreground">
-            <div className="flex items-center gap-3">
+          <div className="flex justify-between items-center pt-1 sm:pt-2 text-xs sm:text-sm text-muted-foreground">
+            <div className="flex items-center gap-2 sm:gap-3">
               <div className="flex items-center">
-                <Heart size={14} className="mr-1" />
+                <Heart size={12} className="mr-1" />
                 <span>{likeCount}</span>
               </div>
               <div className="flex items-center">
-                <MessageSquare size={14} className="mr-1" />
+                <MessageSquare size={12} className="mr-1" />
                 <span>{comments}</span>
               </div>
             </div>
             <Button 
               variant="ghost" 
-              className="font-medium text-foreground p-0 hover:bg-transparent hover:text-primary"
+              className="font-medium text-foreground p-0 hover:bg-transparent hover:text-primary text-xs sm:text-sm"
               onClick={handleReadMore}
             >
               Read More →
@@ -130,54 +135,63 @@ const StoryCard = ({
         </div>
       </div>
 
-      {/* Story Detail Dialog */}
+      {/* Story Detail Dialog - Made responsive */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto">
+        <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto p-4 sm:p-6 w-[95vw]">
           <DialogHeader>
-            <DialogTitle className="text-2xl">{title}</DialogTitle>
+            <DialogTitle className="text-xl sm:text-2xl pr-8">{title}</DialogTitle>
             <Button 
               variant="ghost" 
               size="icon" 
-              className="absolute right-4 top-4"
+              className="absolute right-2 top-2 sm:right-4 sm:top-4 h-8 w-8"
               onClick={() => setIsDialogOpen(false)}
             >
-              <X size={18} />
+              {/* <X size={18} /> */}
             </Button>
           </DialogHeader>
           
-          <div className="space-y-6 mt-2">
+          <div className="space-y-4 sm:space-y-6 mt-2">
             {/* Author and metadata */}
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0">
               <div className="flex items-center gap-2">
                 {author.avatar ? (
-                  <img src={author.avatar} alt={author.name} className="w-10 h-10 rounded-full object-cover" />
+                  <img src={author.avatar} alt={author.name} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover" />
                 ) : (
-                  <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
-                    <User size={20} />
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-muted flex items-center justify-center">
+                    <User size={16} className="sm:text-lg" />
                   </div>
                 )}
                 <div>
-                  <p className="font-medium">{author.name}</p>
-                  <p className="text-sm text-muted-foreground">{postedAt}</p>
+                  <p className="font-medium text-sm sm:text-base">{author.name}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">{postedAt}</p>
                 </div>
               </div>
               
               <div className="flex items-center gap-4">
                 <div className="flex items-center">
-                  <Heart size={18} className={cn("mr-1", liked ? "fill-primary text-primary" : "")} />
-                  <span>{likeCount}</span>
+                  <Heart 
+                    size={16} 
+                    className={cn("mr-1", liked ? "fill-primary text-primary" : "")} 
+                  />
+                  <span className="text-sm">{likeCount}</span>
                 </div>
                 <div className="flex items-center">
-                  <MessageSquare size={18} className="mr-1" />
-                  <span>{comments}</span>
+                  <MessageSquare size={16} className="mr-1" />
+                  <span className="text-sm">{comments}</span>
                 </div>
               </div>
             </div>
             
             {/* Categories */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1 sm:gap-2">
               {categories.map((category) => (
-                <Badge key={category} variant="secondary">{category}</Badge>
+                <Badge 
+                  key={category} 
+                  variant="secondary"
+                  className="text-xs sm:text-sm"
+                >
+                  {category}
+                </Badge>
               ))}
             </div>
             
@@ -191,26 +205,26 @@ const StoryCard = ({
             </div>
             
             {/* Content */}
-            <div className="prose prose-stone max-w-none">
+            <div className="prose prose-stone max-w-none text-sm sm:text-base">
               <p>{fullStory?.content || excerpt}</p>
             </div>
             
             {/* Media gallery */}
             {fullStory?.media && fullStory.media.length > 0 && (
-              <div className="space-y-4">
-                <h3 className="text-lg font-medium">Gallery</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-3 sm:space-y-4">
+                <h3 className="text-base sm:text-lg font-medium">Gallery</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   {fullStory.media.map((item, index) => (
                     <div key={index} className="rounded-md overflow-hidden">
                       {item.type === 'image' ? (
                         <figure>
                           <img 
                             src={item.url} 
-                            alt={item.caption } 
+                            alt={item.caption} 
                             className="w-full h-auto object-cover"
                           />
                           {item.caption && (
-                            <figcaption className="text-sm text-muted-foreground mt-2">{item.caption}</figcaption>
+                            <figcaption className="text-xs sm:text-sm text-muted-foreground mt-1 sm:mt-2">{item.caption}</figcaption>
                           )}
                         </figure>
                       ) : (
@@ -221,7 +235,7 @@ const StoryCard = ({
                             className="w-full h-auto"
                           />
                           {item.caption && (
-                            <figcaption className="text-sm text-muted-foreground mt-2">{item.caption}</figcaption>
+                            <figcaption className="text-xs sm:text-sm text-muted-foreground mt-1 sm:mt-2">{item.caption}</figcaption>
                           )}
                         </figure>
                       )}
