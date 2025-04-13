@@ -19,6 +19,7 @@ import NotFound from "./pages/NotFound";
 import KnowledgeGraph from "./pages/KnowledgeGraph";
 import CulturalMapping from "./pages/CulturalMapping";
 import EducationalNetwork from "./pages/EducationalNetwork";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter>
+          <ScrollToTop/>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/explore" element={<Explore />} />
